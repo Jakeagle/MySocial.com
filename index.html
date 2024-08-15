@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messaging App</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+      integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Login Dialog -->
+    <dialog id="login-dialog">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p id="login-error" style="color: red; display: none">
+        Invalid username or password
+      </p>
+    </dialog>
+
+    <!-- Main Content -->
+    <div class="container" style="display: none" id="app">
+      <div class="sidebar">
+        <h2>Contacts</h2>
+        <ul class="contacts-list">
+          <li>John Doe</li>
+          <li>Jane Smith</li>
+          <li>Group Chat</li>
+          <li>New Chat</li>
+        </ul>
+      </div>
+      <div class="chat-area">
+        <div class="chat-header">
+          <h2>Chat with John Doe</h2>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type a message..."
+          />
+          <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
