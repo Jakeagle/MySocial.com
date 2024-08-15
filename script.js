@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3000"); // Adjust the URL as necessary
+const socket = io("https://mysocial-f6e5anbvg0ewftb0.eastus-01.azurewebsites.net/"); // Adjust the URL as necessary
 const loginDialog = document.getElementById("login-dialog");
 const loginForm = document.getElementById("login-form");
 const loginError = document.getElementById("login-error");
@@ -18,7 +18,7 @@ loginForm.addEventListener("submit", async (event) => {
   const password = document.getElementById("password").value;
 
   try {
-    const response = await fetch("http://localhost:3000/login", {
+    const response = await fetch("https://mysocial-f6e5anbvg0ewftb0.eastus-01.azurewebsites.net/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -118,7 +118,7 @@ async function selectContact(contactName) {
   try {
     const username = document.getElementById("username").value;
     const response = await fetch(
-      `http://localhost:3000/chatHistory?user=${username}&contact=${contactName}`
+      `https://mysocial-f6e5anbvg0ewftb0.eastus-01.azurewebsites.net/chatHistory?user=${username}&contact=${contactName}`
     );
     const result = await response.json();
 
